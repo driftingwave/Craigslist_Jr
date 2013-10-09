@@ -1,8 +1,11 @@
 class CreatePosts < ActiveRecord::Migration
   def change
-  	create table do |t|
+  	create_table :posts do |t|
+  		t.string :title
   	  t.string :description
-  	  t.reference :category_id
+  	  t.decimal :price
+  	  t.string :email
+  	  t.references :category_id
 
   	  t.timestamps
   	end
